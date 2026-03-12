@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <title>Arnoutheek</title>
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--______________________________________________________________________-->
+
+  <style>
+    body {
+      background-color: black;
+      color: white;
+      min-height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    #bibliotheekcontainer {
+      display: flex;       /* Move flex here */
+      flex-wrap: wrap;     /* Allows albums to go to the next row */
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .toggle-checkbox {
+      display: none;
+    }
+
+    .trackscontainer {
+      font-size: 0.5rem;
+      margin-left: -26px;
+    }
+
+    .trackscontainer li:hover {
+      text-decoration: underline;
+    }
+
+    .square-container {
+      width: 300px;
+      height: 300px;
+      cursor: pointer;
+      user-select: none;
+      position: relative;
+      display: block; 
+    }
+
+    .state-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .state-text {
+      width: 100%;
+      height: 100%;
+      background-color: hsl(0, 0%, 10%);
+      color: white;
+      display: none;
+      font-size: 1rem;
+      padding: 20px;
+      box-sizing: border-box;
+      overflow-y: auto;
+    }
+
+    /* Logic for the toggle */
+    .toggle-checkbox:checked + .square-container .state-image {
+      display: none;
+    }
+
+    .toggle-checkbox:checked + .square-container .state-text {
+      display: block;
+    }
+
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: hsl(0, 0%, 40%);
+      border-radius: 2.5px;
+    }
+
+    .audiospelercontainer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 150px;
+    }
+
+  </style>
+</head>
+
+<!--______________________________________________________________________-->
+
+<body>
+
+  <div class="audiospelercontainer">
+    <audio id="audiospeler" controls></audio>
+  </div>
+  <div id="bibliotheekcontainer"></div>
+
+<!--______________________________________________________________________-->
+
+<script>
+  const albumsarray = [
+    {
+    titel: "DONDA 2",
+    tracks: [
+      "TRUE LOVE",
+      "BROKEN ROAD",
+      "GET LOST",
+      "KEEP THE FLOWERS",
+      "JESSE",
+      "TOO EASY",
+      "PABLO",
+      "MR MIYAGI",
+      "HAPPY",
+      "SECURITY",
+      "CITY OF GOD",
+      "530",
+      "CITY OF CHI",
+      "SCIFI",
+      "SUZY",
+      "BURN EVERYTHING",
+      "LOUIE BAGS",
+      "WE DID IT",
+      "MAINTENANCE",
+      "LORD LIFT ME UP",
+      "FIRST TIME IN A LONG TIME"
+      ]
+    },
+    {
+    titel: "VULTURES 2",
+    tracks: [
+      "SLIDE",
+      "TIME MOVING SLOW",
+      "FIELD TRIP",
+      "FRIED",
+      "ISABELLA",
+      "PROMOTION",
+      "530",
+      "DEAD",
+      "FOREVER ROLLING",
+      "BOMB",
+      "RIVER",
+      "FOREVER",
+      "HUSBAND",
+      "LIFESTYLE",
+      "SKY CITY",
+      "MY SOUL"
+      ]
+    },
+    {
+    titel: "VULTURES 1",
+    tracks: [
+      "STARS",
+      "KEYS TO MY LIFE",
+      "PAID",
+      "TALKING",
+      "BACK TO ME",
+      "HOODRAT",
+      "DO IT",
+      "PAPERWORK",
+      "BURN",
+      "FUK SUMN",
+      "VULTURES",
+      "CARNIVAL",
+      "BEG FORGIVENESS",
+      "GOOD (DON'T DIE)",
+      "PROBLEMATIC",
+      "KING"
+      ]
+    },
+    {
+    titel: "Donda (Deluxe)",
+     tracks: [
+      "Donda Chant",
+      "Hurricane",
+      "Moon",
+      "Life Of The Party",
+      "Off The Grid",
+      "Jail",
+      "Praise God",
+      "Come to Life",
+      "Believe What I Say",
+      "No Child Left Behind",
+      "Up From The Ashes",
+      "Remote Control pt 2",
+      "God Breathed",
+      "Lord I Need You",
+      "24",
+      "Junya",
+      "Never Abandon Your Family",
+      "Donda",
+      "Keep My Spirit Alive",
+      "Jesus Lord pt 2",
+      "Heaven and Hell",
+      "Remote Control",
+      "Tell The Vision",
+      "Jonah",
+      "Pure Souls",
+      "Ok Ok",
+      "New Again",
+      "Jesus Lord",
+      "Ok Ok pt 2",
+      "Junya pt 2",
+      "Jail pt 2",
+      "Keep My Spirit Alive pt 2",
+      ]
+    },
+    {
+    titel: "JESUS IS KING",
+    tracks: [
+      "Every Hour (feat. Sunday Service Choir)",
+      "Selah",
+      "Follow God",
+      "Closed on Sunday",
+      "On God",
+      "Everything We Need (feat. Ty Dolla Sign & Ant Clemons)",
+      "Water (feat. Ant Clemons)",
+      "God Is",
+      "Hands On (feat. Fred Hammond)",
+      "Use This Gospel (feat. Clipse & Kenny G)",
+      "Jesus Is Lord"
+      ]
+    },
+  ];
+
+//___________________________________________________________________________
+
+const bibliotheekcontainer = document.getElementById('bibliotheekcontainer');
+const audiospeler = document.getElementById('audiospeler')
+
+let bibliotheekHTML = "";
+
+albumsarray.forEach(album => {
+  let tracksHTML = "";
+  album.tracks.forEach(track => {
+    const bestandspad = `${album.titel}/${track}.mp3`;
+    tracksHTML += `<li class="song" data-bestandspad="${bestandspad}">${track}</li>`;
+  });
+
+  bibliotheekHTML += `
+    <div>
+      <input type="checkbox" id="${album.titel}" class="toggle-checkbox">
+      <label for="${album.titel}" class="square-container">
+        <img src="covers/${album.titel}.webp" alt="${album.titel}" class="state-image">
+        <div class="state-text">
+          <div>${album.titel}</div>
+          <div class="trackscontainer">
+            <ol>
+              ${tracksHTML}
+            </ol>
+          </div>
+        </div>
+      </label>
+    </div>
+  `;
+});
+
+bibliotheekcontainer.innerHTML = bibliotheekHTML;
+
+bibliotheekcontainer.addEventListener('click', (event) => {
+    const target = event.target;
+    
+    if (target.classList.contains('song')) {
+        const src = target.getAttribute('data-bestandspad');
+        audiospeler.src = src;
+        audiospeler.play();
+        
+        // Optional: Highlight current song
+        document.querySelectorAll('.song').forEach(s => s.classList.remove('playing'));
+        target.classList.add('playing');
+}
+});
+
+//bij klik op track album niet omdraaien
+//donkergrijze balk achter track bij hoveren
+//lichtgrijze balk achter track als geselecteerd
+//speler onderaan scherm vastpinnen
+//
+
+</script>
+
+</body>
+
+</html>
