@@ -1,0 +1,1812 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+
+const albumsarray = [
+{
+  title: "?",
+  color: "0a0a0a",
+  artist: "XXXTENTACION",
+  year: 2018,
+  tracks: [
+    { title: "Introduction (instructions)", duration: "1:57", liked: false },
+    { title: "ALONE, PART 3", duration: "1:49", liked: true },
+    { title: "Moonlight", duration: "2:15", liked: false },
+    { title: "SAD!", duration: "2:46", liked: false },
+    { title: "the remedy for a broken heart (why am I so in love)", duration: "2:40", liked: false },
+    { title: "Floor 555", duration: "1:33", liked: false },
+    { title: "NUMB", duration: "3:06", liked: false },
+    { title: "infinity (888)", duration: "2:56", liked: false },
+    { title: "going down!", duration: "1:55", liked: false },
+    { title: "Pain = BESTFRIEND", duration: "1:41", liked: false },
+    { title: "$$$", duration: "2:10", liked: false },
+    { title: "love yourself (interlude)", duration: "0:48", liked: false },
+    { title: "SMASH!", duration: "1:49", liked: false },
+    { title: "I don't even speak spanish lol", duration: "3:12", liked: false },
+    { title: "changes", duration: "2:01", liked: false },
+    { title: "Hope", duration: "1:50", liked: false },
+    { title: "schizophrenia", duration: "1:20", liked: false },
+    { title: "before I close my eyes", duration: "1:39", liked: false }
+  ]
+},
+{
+  title: "17",
+  color: "aeaeac",
+  artist: "XXXTENTACION",
+  year: 2017,
+  tracks: [
+    { title: "The Explanation", duration: "0:50", liked: false },
+    { title: "Jocelyn Flores", duration: "1:59", liked: false },
+    { title: "Depression & Obsession", duration: "2:24", liked: false },
+    { title: "Everybody Dies in Their Nightmares", duration: "1:35", liked: false },
+    { title: "Revenge", duration: "2:00", liked: false },
+    { title: "Save Me", duration: "2:43", liked: false },
+    { title: "Dead Inside (Interlude)", duration: "1:26", liked: false },
+    { title: "Fuck Love", duration: "2:26", liked: false },
+    { title: "Carry On", duration: "2:09", liked: false },
+    { title: "Orlando", duration: "2:43", liked: false },
+    { title: "Ayala (Outro)", duration: "1:39", liked: false }
+  ]
+},
+{
+  title: "18",
+  color: "01a1de",
+  artist: "Moby",
+  year: 2002,
+  tracks: [
+    { title: "We Are All Made of Stars", duration: "4:32", liked: false },
+    { title: "In This World", duration: "4:02", liked: false },
+    { title: "In My Heart", duration: "4:36", liked: false },
+    { title: "Great Escape", duration: "2:09", liked: false },
+    { title: "Signs of Love", duration: "4:25", liked: false },
+    { title: "One of These Mornings", duration: "3:12", liked: false },
+    { title: "Another Woman", duration: "3:56", liked: false },
+    { title: "Fireworks", duration: "2:13", liked: false },
+    { title: "Extreme Ways", duration: "3:57", liked: false },
+    { title: "Jam for the Ladies", duration: "3:22", liked: false },
+    { title: "Sunday (The Day Before My Birthday)", duration: "5:09", liked: false },
+    { title: "18", duration: "4:28", liked: false },
+    { title: "Sleep Alone", duration: "4:45", liked: false },
+    { title: "At Least We Tried", duration: "4:08", liked: false },
+    { title: "Harbour", duration: "6:26", liked: false },
+    { title: "Look Back In", duration: "2:20", liked: false },
+    { title: "The Rafters", duration: "3:22", liked: false },
+    { title: "I'm Not Worried at All", duration: "4:11", liked: false }
+  ]
+},
+{
+  title: "Alone In A Crowd",
+  color: "161a1c",
+  artist: "Oliver Tree",
+  year: 2023,
+  tracks: [
+    { title: "Bounce", duration: "2:46", liked: false },
+    { title: "One & Only", duration: "2:19", liked: false },
+    { title: "Essence", duration: "2:37", liked: false },
+    { title: "Star", duration: "2:35", liked: false },
+    { title: "Fairweather Friends", duration: "2:33", liked: false },
+    { title: "Smile", duration: "2:38", liked: false },
+    { title: "The First Night", duration: "2:24", liked: false },
+    { title: "Strangers", duration: "2:54", liked: false },
+    { title: "Invisible Man", duration: "2:33", liked: false },
+    { title: "Elevator to the Sky", duration: "2:51", liked: false },
+    { title: "Ugly Side", duration: "2:44", liked: false },
+    { title: "Highlight of My Life", duration: "2:36", liked: false },
+    { title: "With You", duration: "2:21", liked: false }
+  ]
+},
+{
+  title: "Blonde",
+  color: "dfdfdf",
+  artist: "Frank Ocean",
+  year: 2016,
+  tracks: [
+    { title: "Nikes", duration: "5:14", liked: false },
+    { title: "Ivy", duration: "4:09", liked: false },
+    { title: "Pink + White", duration: "3:04", liked: false },
+    { title: "Be Yourself", duration: "1:26", liked: false },
+    { title: "Solo", duration: "4:17", liked: false },
+    { title: "Skyline To", duration: "3:04", liked: false },
+    { title: "Self Control", duration: "4:09", liked: false },
+    { title: "Good Guy", duration: "1:06", liked: false },
+    { title: "Nights", duration: "5:07", liked: false },
+    { title: "Solo (Reprise)", duration: "1:18", liked: false },
+    { title: "Pretty Sweet", duration: "2:37", liked: false },
+    { title: "Facebook Story", duration: "1:08", liked: false },
+    { title: "Close to You", duration: "1:25", liked: false },
+    { title: "White Ferrari", duration: "4:08", liked: false },
+    { title: "Seigfried", duration: "5:34", liked: false },
+    { title: "Godspeed", duration: "2:57", liked: false },
+    { title: "Futura Free", duration: "9:24", liked: false }
+  ]
+},
+{
+  title: "Amala",
+  color: "c18a77",
+  artist: "Doja Cat",
+  year: 2018,
+  tracks: [
+    { title: "Go To Town", duration: "3:37", liked: false },
+    { title: "Cookie Jar", duration: "3:22", liked: false },
+    { title: "Roll With Us", duration: "3:00", liked: false },
+    { title: "Wine Pon You", duration: "3:39", liked: false },
+    { title: "Fancy", duration: "2:59", liked: false },
+    { title: "Wild Beach", duration: "3:24", liked: false },
+    { title: "Morning Light", duration: "3:59", liked: false },
+    { title: "Candy", duration: "3:10", liked: false },
+    { title: "Game", duration: "3:15", liked: false },
+    { title: "Casual", duration: "4:00", liked: false },
+    { title: "Down Low", duration: "3:31", liked: false },
+    { title: "Body Language", duration: "4:05", liked: false },
+    { title: "All Nighter", duration: "3:13", liked: false }
+  ]
+},
+{
+  title: "Blue Wonder Power Milk",
+  color: "0f90cf",
+  artist: "Hooverphonic",
+  year: 1998,
+  tracks: [
+    { title: "Battersea", duration: "3:50", liked: false },
+    { title: "One Way Ride", duration: "3:22", liked: false },
+    { title: "Dictionary", duration: "3:31", liked: false },
+    { title: "Club Montepulciano", duration: "3:40", liked: false },
+    { title: "Eden", duration: "3:33", liked: false },
+    { title: "Lung", duration: "2:44", liked: false },
+    { title: "Electro Shock Faders", duration: "3:07", liked: false },
+    { title: "Out of Tune", duration: "3:25", liked: false },
+    { title: "This Strange Effect", duration: "3:55", liked: false },
+    { title: "Renaissance Affair", duration: "3:24", liked: false },
+    { title: "Tuna", duration: "3:47", liked: false },
+    { title: "Magenta", duration: "4:49", liked: false },
+    { title: "Blue Wonder Power Milk", duration: "3:08", liked: false }
+  ]
+},
+{
+  title: "BRAT",
+  color: "8bcf00",
+  artist: "Charli XCX",
+  year: 2024,
+  tracks: [
+    { title: "360", duration: "2:13", liked: false },
+    { title: "Club classics", duration: "2:33", liked: false },
+    { title: "Sympathy is a knife", duration: "2:31", liked: false },
+    { title: "I might say something stupid", duration: "1:49", liked: false },
+    { title: "Talk talk", duration: "2:41", liked: false },
+    { title: "Von dutch", duration: "2:44", liked: false },
+    { title: "Everything is romantic", duration: "3:23", liked: false },
+    { title: "Rewind", duration: "2:48", liked: false },
+    { title: "So I", duration: "3:31", liked: false },
+    { title: "Girl, so confusing", duration: "2:54", liked: false },
+    { title: "Apple", duration: "2:31", liked: false },
+    { title: "B2b", duration: "2:58", liked: false },
+    { title: "Mean girls", duration: "3:09", liked: false },
+    { title: "I think about it all the time", duration: "2:15", liked: false },
+    { title: "365", duration: "3:23", liked: false }
+  ]
+},
+{
+  title: "BULLY",
+  color: "4b4b4b",
+  artist: "Kanye West",
+  year: 2025,
+  tracks: [
+    { title: "Preacher Man", duration: "3:02", liked: false },
+    { title: "Beauty And The Beast", duration: "1:46", liked: false },
+    { title: "Last Breath", duration: "3:07", liked: false },
+    { title: "White Lines", duration: "2:11", liked: false },
+    { title: "I Can't Wait", duration: "2:08", liked: false },
+    { title: "Bully", duration: "2:28", liked: false },
+    { title: "All The Love", duration: "3:50", liked: false },
+    { title: "This One Here", duration: "3:02", liked: false },
+    { title: "Highs And Lows", duration: "1:52", liked: false },
+    { title: "Mission Control", duration: "2:30", liked: false },
+    { title: "Circles", duration: "2:45", liked: false },
+    { title: "Damn", duration: "2:03", liked: false },
+    { title: "Losing Your Mind", duration: "3:15", liked: false }
+  ]
+},
+{
+  title: "channel ORANGE",
+  color: "f37521",
+  artist: "Frank Ocean",
+  year: 2012,
+  tracks: [
+    { title: "Start", duration: "0:46", liked: false },
+    { title: "Thinkin Bout You", duration: "3:20", liked: false },
+    { title: "Fertilizer", duration: "0:39", liked: false },
+    { title: "Sierra Leone", duration: "2:28", liked: false },
+    { title: "Sweet Life", duration: "4:22", liked: false },
+    { title: "Not Just Money", duration: "0:59", liked: false },
+    { title: "Super Rich Kids", duration: "5:04", liked: false },
+    { title: "Pilot Jones", duration: "3:04", liked: false },
+    { title: "Crack Rock", duration: "3:44", liked: false },
+    { title: "Pyramids", duration: "9:52", liked: false },
+    { title: "Lost", duration: "3:54", liked: false },
+    { title: "White", duration: "1:16", liked: false },
+    { title: "Monks", duration: "3:20", liked: false },
+    { title: "Bad Religion", duration: "2:55", liked: false },
+    { title: "Pink Matter", duration: "4:28", liked: false },
+    { title: "Forrest Gump", duration: "3:14", liked: false },
+    { title: "End", duration: "8:43", liked: false }
+  ]
+},
+{
+  title: "CHROMAKOPIA",
+  color: "3e3d36",
+  artist: "Tyler, The Creator",
+  year: 2024,
+  tracks: [
+    { title: "St. Chroma", duration: "3:17", liked: false },
+    { title: "Rah Tah Tah", duration: "2:45", liked: false },
+    { title: "Noid", duration: "4:44", liked: false },
+    { title: "Darling, I", duration: "4:13", liked: false },
+    { title: "Hey Jane", duration: "4:00", liked: false },
+    { title: "I Killed You", duration: "2:48", liked: false },
+    { title: "Judge Judy", duration: "4:29", liked: false },
+    { title: "Sticky", duration: "4:15", liked: false },
+    { title: "Take Your Mask Off", duration: "4:13", liked: false },
+    { title: "Tomorrow", duration: "3:02", liked: false },
+    { title: "Thought I Was Dead", duration: "3:27", liked: false },
+    { title: "Like Him", duration: "4:38", liked: false },
+    { title: "Balloon", duration: "2:34", liked: false },
+    { title: "I Hope You Find Your Way Home", duration: "4:29", liked: false }
+  ]
+},
+{
+  title: "Currents",
+  color: "573677",
+  artist: "Tame Impala",
+  year: 2015,
+  tracks: [
+    { title: "Let It Happen", duration: "7:46", liked: false },
+    { title: "Nangs", duration: "1:47", liked: false },
+    { title: "The Moment", duration: "4:15", liked: false },
+    { title: "Yes I'm Changing", duration: "4:30", liked: false },
+    { title: "Eventually", duration: "5:18", liked: false },
+    { title: "Gossip", duration: "0:55", liked: false },
+    { title: "The Less I Know The Better", duration: "3:36", liked: false },
+    { title: "Past Life", duration: "3:48", liked: false },
+    { title: "Disciples", duration: "1:48", liked: false },
+    { title: "'Cause I'm A Man", duration: "4:01", liked: false },
+    { title: "Reality In Motion", duration: "4:12", liked: false },
+    { title: "Love/Paranoia", duration: "3:05", liked: false },
+    { title: "New Person, Same Old Mistakes", duration: "6:04", liked: false }
+  ]
+},
+{
+  title: "DeBÍ TiRAR MáS FOToS",
+  color: "3e5b3e",
+  artist: "Bad Bunny",
+  year: 2025,
+  tracks: [
+    { title: "NUEVAYoL", duration: "3:04", liked: false },
+    { title: "VOY A LLeVARTE PA PR", duration: "2:37", liked: false },
+    { title: "BAILE INoLVIDABLE", duration: "6:08", liked: true },
+    { title: "PERFuMITO NUEVO", duration: "3:21", liked: false },
+    { title: "WELTiTA", duration: "3:08", liked: false },
+    { title: "VeLDÁ", duration: "3:56", liked: false },
+    { title: "EL CLúB", duration: "3:43", liked: false },
+    { title: "KETU TeCRÉ", duration: "4:11", liked: false },
+    { title: "BOKeTE", duration: "3:36", liked: true },
+    { title: "KLOuFRENS", duration: "3:20", liked: false },
+    { title: "TURiSTA", duration: "3:11", liked: false },
+    { title: "CAFé CON RON", duration: "3:49", liked: false },
+    { title: "PIToRRO DE COCO", duration: "3:27", liked: true },
+    { title: "LO QUE LE PASÓ A HAWAii", duration: "3:50", liked: true },
+    { title: "EoO", duration: "3:25", liked: false },
+    { title: "DtMF", duration: "3:58", liked: false },
+    { title: "LA MuDANZA", duration: "3:34", liked: false }
+  ]
+},
+{
+  title: "Demon Days",
+  color: "001621",
+  artist: "Gorillaz",
+  year: 2005,
+  tracks: [
+    { title: "Intro", duration: "1:03", liked: false },
+    { title: "Last Living Souls", duration: "3:10", liked: false },
+    { title: "Kids with Guns", duration: "3:46", liked: false },
+    { title: "O Green World", duration: "4:32", liked: false },
+    { title: "Dirty Harry", duration: "3:44", liked: false },
+    { title: "Feel Good Inc.", duration: "3:41", liked: false },
+    { title: "El Mañana", duration: "3:50", liked: false },
+    { title: "Every Planet We Reach Is Dead", duration: "4:53", liked: false },
+    { title: "November Has Come", duration: "2:41", liked: false },
+    { title: "All Alone", duration: "3:30", liked: false },
+    { title: "White Light", duration: "2:09", liked: false },
+    { title: "DARE", duration: "4:05", liked: false },
+    { title: "Fire Coming out of the Monkey's Head", duration: "3:17", liked: false },
+    { title: "Don't Get Lost in Heaven", duration: "2:01", liked: false },
+    { title: "Demon Days", duration: "4:28", liked: false }
+  ]
+},
+{
+  title: "DEVIL IS A LIE",
+  color: "032685",
+  artist: "Tommy Richman",
+  year: 2024,
+  tracks: [
+    { title: "DEVIL IS A LIE", duration: "2:42", liked: false }
+  ]
+},
+{
+  title: "Discovery",
+  color: "000000",
+  artist: "Daft Punk",
+  year: 2001,
+  tracks: [
+    { title: "One More Time", duration: "5:20", liked: false },
+    { title: "Aerodynamic", duration: "3:27", liked: false },
+    { title: "Digital Love", duration: "4:58", liked: false },
+    { title: "Harder, Better, Faster, Stronger", duration: "3:44", liked: false },
+    { title: "Crescendolls", duration: "3:31", liked: false },
+    { title: "Nightvision", duration: "1:44", liked: false },
+    { title: "Superheroes", duration: "3:57", liked: false },
+    { title: "High Life", duration: "3:22", liked: false },
+    { title: "Something About Us", duration: "3:51", liked: false },
+    { title: "Voyager", duration: "3:47", liked: false },
+    { title: "Veridis Quo", duration: "5:44", liked: false },
+    { title: "Short Circuit", duration: "3:26", liked: false },
+    { title: "Face to Face", duration: "4:00", liked: false },
+    { title: "Too Long", duration: "10:00", liked: false }
+  ]
+},
+{
+  title: "Donda (Deluxe)",
+  color: "020305",
+  artist: "Kanye West",
+  year: 2021,
+  tracks: [
+    { title: "Donda Chant", duration: "0:52", liked: false },
+    { title: "Hurricane", duration: "4:03", liked: false },
+    { title: "Moon", duration: "2:36", liked: false },
+    { title: "Life of the Party", duration: "6:31", liked: false },
+    { title: "24", duration: "3:17", liked: false },
+    { title: "Jail", duration: "4:57", liked: false },
+    { title: "Praise God", duration: "3:46", liked: false },
+    { title: "Come to Life", duration: "5:10", liked: false },
+    { title: "Believe What I Say", duration: "4:02", liked: false },
+    { title: "No Child Left Behind", duration: "2:58", liked: false },
+    { title: "Up from the Ashes", duration: "2:42", liked: false },
+    { title: "Remote Control pt 2", duration: "5:23", liked: false },
+    { title: "God Breathed", duration: "5:33", liked: false },
+    { title: "Lord I Need You", duration: "2:42", liked: false },
+    { title: "Pure Souls", duration: "5:58", liked: false },
+    { title: "Jail pt 2", duration: "4:57", liked: false },
+    { title: "Junya", duration: "2:27", liked: false },
+    { title: "Never Abandon Your Family", duration: "3:27", liked: false },
+    { title: "Jesus Lord", duration: "8:58", liked: false },
+    { title: "Heaven and Hell", duration: "2:25", liked: false },
+    { title: "Donda", duration: "2:08", liked: false },
+    { title: "Keep My Spirit Alive", duration: "3:41", liked: false },
+    { title: "Jesus Lord pt 2", duration: "11:30", liked: false },
+    { title: "Junya pt 2", duration: "3:02", liked: false },
+    { title: "Remote Control", duration: "3:18", liked: false },
+    { title: "Jonah", duration: "3:15", liked: false },
+    { title: "Ok Ok", duration: "3:24", liked: false },
+    { title: "Off the Grid", duration: "5:39", liked: false },
+    { title: "New Again", duration: "3:03", liked: false },
+    { title: "Glory", duration: "3:51", liked: false },
+    { title: "Ok Ok pt 2", duration: "3:24", liked: false },
+    { title: "Keep My Spirit Alive pt 2", duration: "3:41", liked: false }
+  ]
+},
+{
+  title: "DONDA 2",
+  color: "030303",
+  artist: "Kanye West",
+  year: 2022,
+  tracks: [
+    { title: "TRUE LOVE", duration: "2:17", liked: false },
+    { title: "BROKEN ROAD", duration: "1:40", liked: false },
+    { title: "GET LOST", duration: "2:34", liked: false },
+    { title: "TOO EASY", duration: "2:58", liked: false },
+    { title: "FLOWERS", duration: "2:51", liked: false },
+    { title: "SECURITY", duration: "2:16", liked: false },
+    { title: "WE DID IT KID", duration: "2:48", liked: false },
+    { title: "PABLO", duration: "2:34", liked: false },
+    { title: "LOUIE BAG", duration: "3:13", liked: false },
+    { title: "HAPPY", duration: "4:45", liked: false },
+    { title: "SCI-FI", duration: "4:00", liked: false },
+    { title: "SELFISH", duration: "1:39", liked: false },
+    { title: "LORD LIFT ME UP", duration: "2:09", liked: false },
+    { title: "KEEP IT BURNING", duration: "3:51", liked: false },
+    { title: "MAINTENANCE", duration: "3:13", liked: false },
+    { title: "FIRST TIME IN A LONG TIME", duration: "3:04", liked: false }
+  ]
+},
+{
+  title: "Encore (Deluxe Version)",
+  color: "1c2552",
+  artist: "Eminem",
+  year: 2004,
+  tracks: [
+    { title: "Curtains Up", duration: "0:46", liked: false },
+    { title: "Evil Deeds", duration: "4:19", liked: false },
+    { title: "Never Enough", duration: "2:39", liked: false },
+    { title: "Yellow Brick Road", duration: "5:46", liked: false },
+    { title: "Like Toy Soldiers", duration: "4:56", liked: false },
+    { title: "Mosh", duration: "5:17", liked: false },
+    { title: "Puke", duration: "4:34", liked: false },
+    { title: "My 1st Single", duration: "5:02", liked: false },
+    { title: "Paul (Skit)", duration: "0:32", liked: false },
+    { title: "Rain Man", duration: "5:14", liked: false },
+    { title: "Big Weenie", duration: "4:26", liked: false },
+    { title: "Em Calls Paul (Skit)", duration: "1:11", liked: false },
+    { title: "Just Lose It", duration: "4:08", liked: false },
+    { title: "Ass Like That", duration: "4:25", liked: false },
+    { title: "Spend Some Time", duration: "5:10", liked: false },
+    { title: "Mockingbird", duration: "4:11", liked: false },
+    { title: "Crazy in Love", duration: "4:02", liked: false },
+    { title: "One Shot 2 Shot", duration: "4:26", liked: false },
+    { title: "Final Thought (Skit)", duration: "0:30", liked: false },
+    { title: "Encore / Curtains Down", duration: "5:48", liked: false },
+    { title: "We As Americans", duration: "4:36", liked: false },
+    { title: "Love You More", duration: "4:44", liked: false },
+    { title: "Can-I-Bitch", duration: "5:06", liked: false }
+  ]
+},
+{
+  title: "Fake ID",
+  color: "2c3a5b",
+  artist: "Riton & Kah-Lo",
+  year: 2017,
+  tracks: [
+    { title: "Fake ID", duration: "4:06", liked: false }
+  ]
+},
+{
+  title: "G I R L",
+  color: "e8b92f",
+  artist: "Pharrell Williams",
+  year: 2014,
+  tracks: [
+    { title: "Marilyn Monroe", duration: "5:51", liked: false },
+    { title: "Brand New", duration: "4:31", liked: false },
+    { title: "Hunter", duration: "4:00", liked: false },
+    { title: "Gush", duration: "3:54", liked: false },
+    { title: "Happy", duration: "3:53", liked: false },
+    { title: "Come Get It Bae", duration: "3:21", liked: false },
+    { title: "Gust of Wind", duration: "4:45", liked: false },
+    { title: "Lost Queen", duration: "7:56", liked: false },
+    { title: "Know Who You Are", duration: "3:56", liked: false },
+    { title: "It Girl", duration: "4:47", liked: false }
+  ]
+},
+{
+  title: "Home Again",
+  color: "3e1a04",
+  artist: "Michael Kiwanuka",
+  year: 2012,
+  tracks: [
+    { title: "Tell Me A Tale", duration: "4:12", liked: false },
+    { title: "I'm Getting Ready", duration: "2:25", liked: false },
+    { title: "I'll Get Along", duration: "3:31", liked: false },
+    { title: "Rest", duration: "3:50", liked: false },
+    { title: "Home Again", duration: "3:30", liked: false },
+    { title: "Bones", duration: "3:52", liked: false },
+    { title: "Always Waiting", duration: "4:31", liked: false },
+    { title: "I Won't Lie", duration: "4:05", liked: false },
+    { title: "Any Day Will Do Fine", duration: "3:40", liked: false },
+    { title: "Worry Walks Beside Me", duration: "5:02", liked: false }
+  ]
+},
+{
+  title: "Homework",
+  color: "0a0a0c",
+  artist: "Daft Punk",
+  year: 1997,
+  tracks: [
+    { title: "Daftendirekt", duration: "2:44", liked: false },
+    { title: "WDPK 83.7 FM", duration: "0:28", liked: false },
+    { title: "Revolution 909", duration: "5:26", liked: false },
+    { title: "Da Funk", duration: "5:28", liked: false },
+    { title: "Phoenix", duration: "4:55", liked: false },
+    { title: "Fresh", duration: "4:03", liked: false },
+    { title: "Around the World", duration: "7:07", liked: false },
+    { title: "Rollin' & Scratchin'", duration: "7:26", liked: false },
+    { title: "Teachers", duration: "2:52", liked: false },
+    { title: "High Fidelity", duration: "6:00", liked: false },
+    { title: "Rock'n Roll", duration: "7:32", liked: false },
+    { title: "Oh Yeah", duration: "2:00", liked: false },
+    { title: "Burnin'", duration: "6:53", liked: false },
+    { title: "Indo Silver Club", duration: "4:32", liked: false },
+    { title: "Alive", duration: "5:15", liked: false },
+    { title: "Funk Ad", duration: "0:50", liked: false }
+  ]
+},
+{
+  title: "In My Mind",
+  color: "ffffff",
+  artist: "Pharrell Williams",
+  year: 2006,
+  tracks: [
+    { title: "Can I Have It Like That", duration: "3:55", liked: false },
+    { title: "How Does It Feel?", duration: "3:35", liked: false },
+    { title: "Raspy Shit", duration: "3:34", liked: false },
+    { title: "Best Friend", duration: "4:40", liked: false },
+    { title: "You Can Do It Too", duration: "5:22", liked: false },
+    { title: "Keep It Playa", duration: "4:18", liked: false },
+    { title: "That Girl", duration: "4:01", liked: false },
+    { title: "Angel", duration: "2:44", liked: false },
+    { title: "Young Girl / I Really Like You", duration: "8:13", liked: false },
+    { title: "Take It Off (Dim The Lights)", duration: "4:07", liked: false },
+    { title: "Stay With Me", duration: "4:06", liked: false },
+    { title: "Baby", duration: "4:06", liked: false },
+    { title: "Our Father", duration: "3:27", liked: false },
+    { title: "Number One", duration: "3:56", liked: false },
+    { title: "Show You How To Hustle", duration: "4:13", liked: false }
+  ]
+},
+{
+  title: "JESUS IS KING",
+  color: "ffffff",
+  artist: "Kanye West",
+  year: 2019,
+  tracks: [
+    { title: "Every Hour", duration: "1:52", liked: false },
+    { title: "Selah", duration: "2:44", liked: false },
+    { title: "Follow God", duration: "1:44", liked: false },
+    { title: "Closed on Sunday", duration: "2:31", liked: false },
+    { title: "On God", duration: "2:16", liked: false },
+    { title: "Everything We Need", duration: "1:56", liked: false },
+    { title: "Water", duration: "2:48", liked: false },
+    { title: "God Is", duration: "3:23", liked: false },
+    { title: "Hands On", duration: "3:23", liked: false },
+    { title: "Use This Gospel", duration: "3:33", liked: false },
+    { title: "Jesus Is Lord", duration: "0:49", liked: false }
+  ]
+},
+{
+  title: "KIDS SEE GHOSTS",
+  color: "b3718d",
+  artist: "KIDS SEE GHOSTS",
+  year: 2018,
+  tracks: [
+    { title: "Feel The Love", duration: "2:56", liked: false },
+    { title: "Fire", duration: "2:20", liked: false },
+    { title: "4th Dimension", duration: "2:33", liked: false },
+    { title: "Freeee (Ghost Town, Pt. 2)", duration: "3:26", liked: false },
+    { title: "Reborn", duration: "5:24", liked: false },
+    { title: "Kids See Ghosts", duration: "4:05", liked: false },
+    { title: "Cudi Montage", duration: "3:17", liked: false }
+  ]
+},
+{
+  title: "Love & Hate",
+  color: "1a1a1a",
+  artist: "Michael Kiwanuka",
+  year: 2016,
+  tracks: [
+    { title: "Cold Little Heart", duration: "9:58", liked: false },
+    { title: "Black Man In A White World", duration: "4:18", liked: false },
+    { title: "Falling", duration: "4:16", liked: false },
+    { title: "Place I Belong", duration: "4:47", liked: false },
+    { title: "Love & Hate", duration: "7:07", liked: false },
+    { title: "One More Night", duration: "3:53", liked: false },
+    { title: "I'll Never Love", duration: "2:45", liked: false },
+    { title: "Rule the World", duration: "5:42", liked: false },
+    { title: "Father's Child", duration: "7:05", liked: false },
+    { title: "The Final Frame", duration: "4:59", liked: false }
+  ]
+},
+{
+  title: "Man On The Moon II: The Legend Of Mr. Rager",
+  color: "2f241c",
+  artist: "Kid Cudi",
+  year: 2010,
+  tracks: [
+    { title: "Scott Mescudi Vs. The World", duration: "3:55", liked: false },
+    { title: "REVOFEV", duration: "3:03", liked: false },
+    { title: "Don't Play This Song", duration: "3:43", liked: false },
+    { title: "We Aite (Wake Your Mind Up)", duration: "1:26", liked: false },
+    { title: "Marijuana", duration: "4:20", liked: false },
+    { title: "Mojo So Dope", duration: "3:30", liked: false },
+    { title: "Ashin' Kusher", duration: "3:48", liked: false },
+    { title: "Erase Me", duration: "3:12", liked: false },
+    { title: "Wild'n Cuz I'm Young", duration: "4:14", liked: false },
+    { title: "The Mood", duration: "2:35", liked: false },
+    { title: "MANIAC", duration: "2:58", liked: false },
+    { title: "Mr. Rager", duration: "4:54", liked: false },
+    { title: "These Worries", duration: "4:15", liked: false },
+    { title: "The End", duration: "4:20", liked: false },
+    { title: "All Along", duration: "3:22", liked: false },
+    { title: "GHOST!", duration: "4:49", liked: false },
+    { title: "Trapped In My Mind", duration: "3:34", liked: false }
+  ]
+},
+{
+  title: "Man On The Moon III: The Chosen",
+  color: "242046",
+  artist: "Kid Cudi",
+  year: 2020,
+  tracks: [
+    { title: "Beautiful Trip", duration: "0:37", liked: false },
+    { title: "Tequila Shots", duration: "3:13", liked: false },
+    { title: "Another Day", duration: "3:19", liked: false },
+    { title: "She Knows This", duration: "3:36", liked: false },
+    { title: "Dive", duration: "2:28", liked: false },
+    { title: "Damaged", duration: "2:30", liked: false },
+    { title: "Heaven On Earth", duration: "3:21", liked: false },
+    { title: "Show Out", duration: "2:54", liked: false },
+    { title: "Solo Dolo, Pt. III", duration: "4:02", liked: false },
+    { title: "Sad People", duration: "2:56", liked: false },
+    { title: "Elsie's Baby Boy (Flashback)", duration: "3:39", liked: false },
+    { title: "Sept. 16", duration: "4:09", liked: false },
+    { title: "The Void", duration: "5:25", liked: false },
+    { title: "Lovin' Me", duration: "2:45", liked: false },
+    { title: "The Pale Moonlight", duration: "2:56", liked: false },
+    { title: "Rockstar Knights", duration: "3:51", liked: false },
+    { title: "4 Da Kidz", duration: "3:04", liked: false },
+    { title: "Lord I Know", duration: "3:32", liked: false }
+  ]
+},
+{
+  title: "Man On The Moon: The End Of Day",
+  color: "482017",
+  artist: "Kid Cudi",
+  year: 2009,
+  tracks: [
+    { title: "In My Dreams", duration: "3:19", liked: false },
+    { title: "Soundtrack 2 My Life", duration: "3:56", liked: false },
+    { title: "Simple As...", duration: "2:31", liked: false },
+    { title: "Solo Dolo (Nightmare)", duration: "4:26", liked: false },
+    { title: "Heart of a Lion (Kid Cudi Theme Music)", duration: "4:21", liked: false },
+    { title: "My World", duration: "4:03", liked: false },
+    { title: "Day 'n' Nite", duration: "3:41", liked: false },
+    { title: "Sky Might Fall", duration: "3:40", liked: false },
+    { title: "Enter Galactic (Love Connection, Pt. I)", duration: "4:20", liked: false },
+    { title: "Alive (Nightmare)", duration: "4:06", liked: false },
+    { title: "Cudi Zone", duration: "4:19", liked: false },
+    { title: "Make Her Say", duration: "3:36", liked: false },
+    { title: "Pursuit of Happiness (Nightmare)", duration: "4:55", liked: false },
+    { title: "Hyyerr", duration: "3:32", liked: false },
+    { title: "Up Up & Away", duration: "3:47", liked: false }
+  ]
+},
+{
+  title: "MILLION DOLLAR BABY",
+  color: "22231f",
+  artist: "Tommy Richman",
+  year: 2024,
+  tracks: [
+    { title: "MILLION DOLLAR BABY", duration: "2:35", liked: false }
+  ]
+},
+{
+  title: "My Dear Melancholy,",
+  color: "000505",
+  artist: "The Weeknd",
+  year: 2018,
+  tracks: [
+    { title: "Call Out My Name", duration: "3:48", liked: false },
+    { title: "Try Me", duration: "3:41", liked: false },
+    { title: "Wasted Times", duration: "3:40", liked: false },
+    { title: "I Was Never There", duration: "4:01", liked: false },
+    { title: "Hurt You", duration: "3:50", liked: false },
+    { title: "Privilege", duration: "2:50", liked: false }
+  ]
+},
+{
+  title: "Nothing Less",
+  color: "030408",
+  artist: "Krezip",
+  year: 2000,
+  tracks: [
+    { title: "All Unsaid", duration: "3:07", liked: false },
+    { title: "Won't Cry", duration: "3:14", liked: false },
+    { title: "Give My Life", duration: "3:27", liked: false },
+    { title: "I Would Stay", duration: "3:50", liked: false },
+    { title: "Protection", duration: "2:46", liked: false },
+    { title: "Why Do I", duration: "3:59", liked: false },
+    { title: "Thought That You Would Be", duration: "2:42", liked: false },
+    { title: "Get It On", duration: "3:55", liked: false },
+    { title: "Everything And More", duration: "4:05", liked: false },
+    { title: "Happy Now", duration: "3:39", liked: false },
+    { title: "I'll Be Gone", duration: "2:42", liked: false },
+    { title: "Let It Go", duration: "3:03", liked: false },
+    { title: "Fine", duration: "4:20", liked: false }
+  ]
+},
+{
+  title: "Paint The Town Red",
+  color: "631f24",
+  artist: "Doja Cat",
+  year: 2023,
+  tracks: [
+    { title: "Paint The Town Red", duration: "3:51", liked: false }
+  ]
+},
+{
+  title: "Passion, Pain & Demon Slayin'",
+  color: "000000",
+  artist: "Kid Cudi",
+  year: 2016,
+  tracks: [
+    { title: "Frequency", duration: "4:58", liked: false },
+    { title: "Swim in the Light", duration: "4:29", liked: false },
+    { title: "Releaser", duration: "5:27", liked: false },
+    { title: "By Design", duration: "4:17", liked: false },
+    { title: "All In", duration: "4:11", liked: false },
+    { title: "ILLusions", duration: "4:16", liked: false },
+    { title: "Rose Golden", duration: "4:38", liked: false },
+    { title: "Baptized in Fire", duration: "4:46", liked: false },
+    { title: "Flight at First Sight / Advanced", duration: "3:57", liked: false },
+    { title: "Does It", duration: "4:23", liked: false },
+    { title: "Dance 4 Eternity", duration: "4:43", liked: false },
+    { title: "Distant Fantasies", duration: "4:48", liked: false },
+    { title: "Wounds", duration: "4:04", liked: false },
+    { title: "Mature Nature", duration: "3:55", liked: false },
+    { title: "Kitchen", duration: "4:29", liked: false },
+    { title: "Cosmic Warrior", duration: "4:01", liked: false },
+    { title: "The Guide", duration: "5:06", liked: false },
+    { title: "The Commander", duration: "4:16", liked: false },
+    { title: "Surfin'", duration: "6:15", liked: false }
+  ]
+},
+{
+  title: "Planet Her",
+  color: "001a4d",
+  artist: "Doja Cat",
+  year: 2021,
+  tracks: [
+    { title: "Woman", duration: "2:52", liked: false },
+    { title: "Naked", duration: "3:43", liked: false },
+    { title: "Payday", duration: "3:32", liked: false },
+    { title: "Get Into It (Yuh)", duration: "2:18", liked: false },
+    { title: "Need to Know", duration: "3:30", liked: false },
+    { title: "I Don't Do Drugs", duration: "3:08", liked: false },
+    { title: "Love To Dream", duration: "3:36", liked: false },
+    { title: "You Right", duration: "3:06", liked: false },
+    { title: "Been Like This", duration: "2:57", liked: false },
+    { title: "Options", duration: "2:39", liked: false },
+    { title: "Ain't Shit", duration: "2:54", liked: false },
+    { title: "Imagine", duration: "2:28", liked: false },
+    { title: "Alone", duration: "3:48", liked: false },
+    { title: "Kiss Me More", duration: "3:28", liked: false }
+  ]
+},
+{
+  title: "Plastic Beach",
+  color: "6f3d26",
+  artist: "Gorillaz",
+  year: 2010,
+  tracks: [
+    { title: "Orchestral Intro", duration: "1:09", liked: false },
+    { title: "Welcome to the World of the Plastic Beach", duration: "3:35", liked: false },
+    { title: "White Flag", duration: "3:43", liked: false },
+    { title: "Rhinestone Eyes", duration: "3:20", liked: false },
+    { title: "Stylo", duration: "4:30", liked: false },
+    { title: "Superfast Jellyfish", duration: "2:54", liked: false },
+    { title: "Empire Ants", duration: "4:43", liked: false },
+    { title: "Glitter Freeze", duration: "4:03", liked: false },
+    { title: "Some Kind of Nature", duration: "2:59", liked: false },
+    { title: "On Melancholy Hill", duration: "3:53", liked: false },
+    { title: "Broken", duration: "3:17", liked: false },
+    { title: "Sweepstakes", duration: "5:20", liked: false },
+    { title: "Plastic Beach", duration: "3:47", liked: false },
+    { title: "To Binge", duration: "3:55", liked: false },
+    { title: "Cloud of Unknowing", duration: "3:06", liked: false },
+    { title: "Pirate Jet", duration: "2:32", liked: false }
+  ]
+},
+{
+  title: "Play",
+  color: "2b8686",
+  artist: "Moby",
+  year: 1999,
+  tracks: [
+    { title: "Honey", duration: "3:28", liked: false },
+    { title: "Find My Baby", duration: "3:59", liked: false },
+    { title: "Porcelain", duration: "4:01", liked: false },
+    { title: "Why Does My Heart Feel So Bad?", duration: "4:24", liked: false },
+    { title: "South Side", duration: "3:49", liked: false },
+    { title: "Rushing", duration: "3:00", liked: false },
+    { title: "Bodyrock", duration: "3:36", liked: false },
+    { title: "Natural Blues", duration: "4:13", liked: false },
+    { title: "Machete", duration: "3:37", liked: false },
+    { title: "7", duration: "1:02", liked: false },
+    { title: "Run On", duration: "3:45", liked: false },
+    { title: "Down Slow", duration: "1:34", liked: false },
+    { title: "If Things Were Perfect", duration: "4:18", liked: false },
+    { title: "Everloving", duration: "3:25", liked: false },
+    { title: "Inside", duration: "4:48", liked: false },
+    { title: "Guitar Flute & String", duration: "2:09", liked: false },
+    { title: "The Sky Is Broken", duration: "4:18", liked: false },
+    { title: "My Weakness", duration: "3:37", liked: false }
+  ]
+},
+{
+  title: "Random Access Memories",
+  color: "090d0e",
+  artist: "Daft Punk",
+  year: 2013,
+  tracks: [
+    { title: "Give Life Back to Music", duration: "4:34", liked: false },
+    { title: "The Game of Love", duration: "5:22", liked: false },
+    { title: "Giorgio by Moroder", duration: "9:04", liked: false },
+    { title: "Within", duration: "3:48", liked: false },
+    { title: "Instant Crush", duration: "5:37", liked: false },
+    { title: "Lose Yourself to Dance", duration: "5:53", liked: false },
+    { title: "Touch", duration: "8:18", liked: false },
+    { title: "Get Lucky", duration: "6:09", liked: false },
+    { title: "Beyond", duration: "4:50", liked: false },
+    { title: "Motherboard", duration: "5:41", liked: false },
+    { title: "Fragments of Time", duration: "4:39", liked: false },
+    { title: "Doin' It Right", duration: "4:11", liked: false },
+    { title: "Contact", duration: "6:23", liked: false }
+  ]
+},
+{
+  title: "Recovery (Deluxe Edition)",
+  color: "9fb3c4",
+  artist: "Eminem",
+  year: 2010,
+  tracks: [
+    { title: "Cold Wind Blows", duration: "5:03", liked: false },
+    { title: "Talkin' 2 Myself", duration: "5:00", liked: false },
+    { title: "On Fire", duration: "3:33", liked: false },
+    { title: "Won't Back Down", duration: "4:25", liked: false },
+    { title: "W.T.P.", duration: "3:58", liked: false },
+    { title: "Going Through Changes", duration: "4:58", liked: false },
+    { title: "Not Afraid", duration: "4:08", liked: false },
+    { title: "Seduction", duration: "4:35", liked: false },
+    { title: "No Love", duration: "4:59", liked: false },
+    { title: "Space Bound", duration: "4:38", liked: false },
+    { title: "Cinderella Man", duration: "4:39", liked: false },
+    { title: "25 to Life", duration: "4:01", liked: false },
+    { title: "So Bad", duration: "5:25", liked: false },
+    { title: "Almost Famous", duration: "4:52", liked: false },
+    { title: "Love the Way You Lie", duration: "4:23", liked: false },
+    { title: "You're Never Over", duration: "5:05", liked: false },
+    { title: "Untitled", duration: "3:14", liked: false },
+    { title: "Ridaz", duration: "5:00", liked: false },
+    { title: "Session One", duration: "4:28", liked: false }
+  ]
+},
+{
+  title: "Reflection",
+  color: "9a5538",
+  artist: "Hooverphonic",
+  year: 2013,
+  tracks: [
+    { title: "Amalfi", duration: "3:18", liked: false },
+    { title: "ABC of Apology", duration: "3:22", liked: false },
+    { title: "Ether", duration: "2:53", liked: false },
+    { title: "One Two Three", duration: "3:10", liked: false },
+    { title: "Heartbroken", duration: "3:26", liked: false },
+    { title: "Song for Milo", duration: "2:55", liked: false },
+    { title: "My Nigredo Soul", duration: "4:08", liked: false },
+    { title: "Devil Kind of Girl", duration: "3:19", liked: false },
+    { title: "Happiness", duration: "3:23", liked: false },
+    { title: "The Firestarter", duration: "3:16", liked: false },
+    { title: "Copper", duration: "3:22", liked: false },
+    { title: "Gravity", duration: "3:02", liked: false }
+  ]
+},
+{
+  title: "Relapse (Deluxe)",
+  color: "0a1010",
+  artist: "Eminem",
+  year: 2009,
+  tracks: [
+    { title: "Dr. West", duration: "1:29", liked: false },
+    { title: "3 a.m.", duration: "5:19", liked: false },
+    { title: "My Mom", duration: "5:19", liked: false },
+    { title: "Insane", duration: "3:01", liked: false },
+    { title: "Bagpipes from Baghdad", duration: "4:43", liked: false },
+    { title: "Hello", duration: "4:08", liked: false },
+    { title: "Tonite", duration: "4:28", liked: false },
+    { title: "Controlled Substance", duration: "4:10", liked: false },
+    { title: "Same Song & Dance", duration: "4:07", liked: false },
+    { title: "We Made You", duration: "4:47", liked: false },
+    { title: "Medicine Ball", duration: "3:57", liked: false },
+    { title: "Stay Wide Awake", duration: "5:20", liked: false },
+    { title: "Old Time's Sake", duration: "4:35", liked: false },
+    { title: "Must Be the Ganja", duration: "4:03", liked: false },
+    { title: "Mr. Mathers", duration: "0:42", liked: false },
+    { title: "Déjà Vu", duration: "4:43", liked: false },
+    { title: "Beautiful", duration: "6:32", liked: false },
+    { title: "Careful What You Wish For", duration: "3:47", liked: false },
+    { title: "My Darling", duration: "5:20", liked: false },
+    { title: "Crack a Bottle", duration: "4:58", liked: false },
+    { title: "Elevator", duration: "4:52", liked: false }
+  ]
+},
+{
+  title: "ROCKMAN",
+  color: "6d655a",
+  artist: "Mk.gee",
+  year: 2024,
+  tracks: [
+    { title: "ROCKMAN", duration: "3:10", liked: false }
+  ]
+},
+{
+  title: "SATURATION III",
+  color: "ffffff",
+  artist: "BROCKHAMPTON",
+  year: 2017,
+  tracks: [
+    { title: "BOOGIE", duration: "3:13", liked: false },
+    { title: "ZIPPER", duration: "3:22", liked: false },
+    { title: "JOHNNY", duration: "4:11", liked: false },
+    { title: "LIQUID", duration: "3:21", liked: false },
+    { title: "STUPID", duration: "3:36", liked: false },
+    { title: "BLEACH", duration: "4:43", liked: false },
+    { title: "ALASKA", duration: "3:19", liked: false },
+    { title: "HOTTIE", duration: "3:37", liked: false },
+    { title: "SISTER / NATION", duration: "6:03", liked: false },
+    { title: "RENTAL", duration: "3:34", liked: false },
+    { title: "STAINS", duration: "3:01", liked: false },
+    { title: "TEAM", duration: "4:33", liked: false }
+  ]
+},
+{
+  title: "SKINS",
+  color: "090909",
+  artist: "XXXTENTACION",
+  year: 2018,
+  tracks: [
+    { title: "Introduction", duration: "0:31", liked: false },
+    { title: "Guardian angel", duration: "1:48", liked: false },
+    { title: "Train food", duration: "2:44", liked: false },
+    { title: "whoa (mind in awe)", duration: "2:37", liked: false },
+    { title: "BAD!", duration: "1:34", liked: false },
+    { title: "STARING AT THE SKY", duration: "1:25", liked: false },
+    { title: "One Minute", duration: "3:17", liked: false },
+    { title: "difference (interlude)", duration: "1:16", liked: false },
+    { title: "I don't let go", duration: "2:01", liked: false },
+    { title: "what are you so afraid of", duration: "1:15", liked: false }
+  ]
+},
+{
+  title: "SOS",
+  color: "0f4264",
+  artist: "SZA",
+  year: 2022,
+  tracks: [
+    { title: "SOS", duration: "1:57", liked: false },
+    { title: "Kill Bill", duration: "2:33", liked: false },
+    { title: "Seek & Destroy", duration: "3:23", liked: false },
+    { title: "Low", duration: "3:01", liked: false },
+    { title: "Love Language", duration: "4:16", liked: false },
+    { title: "Blind", duration: "2:30", liked: false },
+    { title: "Used", duration: "2:26", liked: false },
+    { title: "Snooze", duration: "3:21", liked: false },
+    { title: "Notice Me", duration: "2:40", liked: false },
+    { title: "Gone Girl", duration: "4:04", liked: false },
+    { title: "Smoking on My Ex Pack", duration: "1:23", liked: false },
+    { title: "Ghost in the Machine", duration: "3:38", liked: false },
+    { title: "F2F", duration: "3:05", liked: false },
+    { title: "Nobody Gets Me", duration: "3:00", liked: false },
+    { title: "Conceited", duration: "2:31", liked: false },
+    { title: "Special", duration: "2:38", liked: false },
+    { title: "Too Late", duration: "2:44", liked: false },
+    { title: "Far", duration: "3:00", liked: false },
+    { title: "Shirt", duration: "3:01", liked: false },
+    { title: "Open Arms", duration: "3:59", liked: false },
+    { title: "I Hate U", duration: "2:54", liked: false },
+    { title: "Good Days", duration: "4:39", liked: false },
+    { title: "Forgiveless", duration: "2:21", liked: false }
+  ]
+},
+{
+  title: "Speedin' Bullet 2 Heaven",
+  color: "7c795a",
+  artist: "Kid Cudi",
+  year: 2015,
+  tracks: [
+    { title: "Edge of the Earth / Post Mortem Boredom", duration: "4:43", liked: false },
+    { title: "CONFUSED!", duration: "3:56", liked: false },
+    { title: "Man in the Night", duration: "3:50", liked: false },
+    { title: "Screwed", duration: "4:24", liked: false },
+    { title: "Whenever", duration: "3:43", liked: false },
+    { title: "Embers", duration: "4:56", liked: false },
+    { title: "Speedin' Bullet 2 Heaven", duration: "4:34", liked: false },
+    { title: "On Edge", duration: "2:49", liked: false },
+    { title: "Angels", duration: "4:15", liked: false },
+    { title: "The Nothing", duration: "3:40", liked: false },
+    { title: "Amen", duration: "3:16", liked: false },
+    { title: "Handle with Care", duration: "3:44", liked: false },
+    { title: "Judgemental Cunt", duration: "3:16", liked: false },
+    { title: "Séance Chaos", duration: "1:52", liked: false },
+    { title: "Fairy Tale Remains", duration: "3:10", liked: false },
+    { title: "Where Did You Sleep Last Night", duration: "2:50", liked: false },
+    { title: "Speedin' Bullet 2 Heaven (Acoustic)", duration: "4:22", liked: false },
+    { title: "Worth", duration: "3:56", liked: false },
+    { title: "Fade 2 Red", duration: "2:53", liked: false },
+    { title: "Adventures", duration: "4:12", liked: false },
+    { title: "The Return of Chip Douglas", duration: "3:44", liked: false },
+    { title: "Trauma", duration: "2:13", liked: false },
+    { title: "Wait!", duration: "1:23", liked: false },
+    { title: "Insides Out", duration: "2:22", liked: false },
+    { title: "Speedin' Bullet 2 Heaven (Demo)", duration: "3:40", liked: false }
+  ]
+},
+{
+  title: "Sundress",
+  color: "b9cfab",
+  artist: "A$AP Rocky",
+  year: 2018,
+  tracks: [
+    { title: "Sundress", duration: "2:38", liked: false }
+  ]
+},
+{
+  title: "The Billionaire Boys Club Tape",
+  color: "1a1b19",
+  artist: "Pharrell Williams",
+  year: 2003,
+  tracks: [
+    { title: "The In Crowd", duration: "3:22", liked: false },
+    { title: "Lookin' At Me", duration: "4:15", liked: false },
+    { title: "She Wants To Move", duration: "3:33", liked: false }
+  ]
+},
+{
+  title: "The Eminem Show",
+  color: "6c201b",
+  artist: "Eminem",
+  year: 2002,
+  tracks: [
+    { title: "Curtains Up (Skit)", duration: "0:30", liked: false },
+    { title: "White America", duration: "5:24", liked: false },
+    { title: "Business", duration: "4:11", liked: false }
+  ]
+},
+{
+  title: "The Magnificent Tree",
+  color: "0263ee",
+  artist: "Hooverphonic",
+  year: 2000,
+  tracks: [
+    { title: "Autoharp", duration: "4:21", liked: false },
+    { title: "Mad About You", duration: "3:43", liked: false },
+    { title: "Waves", duration: "4:01", liked: false }
+  ]
+},
+{
+  title: "The Marshall Mathers LP",
+  color: "373d31",
+  artist: "Eminem",
+  year: 2000,
+  tracks: [
+    { title: "Public Service Announcement 2000", duration: "0:25", liked: false },
+    { title: "Kill You", duration: "4:24", liked: false },
+    { title: "Stan", duration: "6:44", liked: false }
+  ]
+},
+{
+  title: "The Marshall Mathers LP2 (Deluxe)",
+  color: "483e3f",
+  artist: "Eminem",
+  year: 2013,
+  tracks: [
+    { title: "Bad Guy", duration: "7:14", liked: false },
+    { title: "Parking Lot (Skit)", duration: "0:55", liked: false },
+    { title: "Rhyme Or Reason", duration: "5:01", liked: false }
+  ]
+},
+{
+  title: "The Slim Shady LP",
+  color: "514a67",
+  artist: "Eminem",
+  year: 1999,
+  tracks: [
+    { title: "Public Service Announcement", duration: "0:33", liked: false },
+    { title: "My Name Is", duration: "4:28", liked: false },
+    { title: "Guilty Conscience", duration: "3:19", liked: false }
+  ]
+},
+{
+  title: "The Slow Rush",
+  color: "ab0904",
+  artist: "Tame Impala",
+  year: 2020,
+  tracks: [
+    { title: "One More Year", duration: "5:22", liked: false },
+    { title: "Instant Destiny", duration: "3:13", liked: false },
+    { title: "Borderline", duration: "3:57", liked: false }
+  ]
+},
+{
+  title: "Two Star & The Dream Police",
+  color: "112d41",
+  artist: "Mk.gee",
+  year: 2024,
+  tracks: [
+    { title: "New Low", duration: "2:46", liked: false },
+    { title: "How many miles", duration: "3:01", liked: false },
+    { title: "Are You Looking Up", duration: "2:58", liked: false }
+  ]
+},
+{
+  title: "Ugly is Beautiful: Shorter, Thicker & Uglier",
+  color: "ffc75a",
+  artist: "Oliver Tree",
+  year: 2020,
+  tracks: [
+    { title: "Me, Myself & I", duration: "2:53", liked: false },
+    { title: "1993", duration: "2:39", liked: false },
+    { title: "Cash Machine", duration: "2:56", liked: false }
+  ]
+},
+{
+  title: "VULTURES 1",
+  color: "2e291d",
+  artist: "¥$",
+  year: 2024,
+  tracks: [
+    { title: "STARS", duration: "1:55", liked: false },
+    { title: "KEYS TO MY LIFE", duration: "2:54", liked: false },
+    { title: "PAID", duration: "3:15", liked: false }
+  ]
+},
+{
+  title: "VULTURES 2",
+  color: "333935",
+  artist: "¥$",
+  year: 2024,
+  tracks: [
+    { title: "SLIDE", duration: "3:17", liked: false },
+    { title: "TIME MOVING SLOW", duration: "2:39", liked: false },
+    { title: "FIELD TRIP", duration: "2:47", liked: false }
+  ]
+},
+{
+  title: "Watch The Throne",
+  color: "a98d5e",
+  artist: "JAY-Z & Kanye West",
+  year: 2011,
+  tracks: [
+    { title: "No Church In The Wild", duration: "4:32", liked: false },
+    { title: "Lift Off", duration: "4:26", liked: false },
+    { title: "Niggas In Paris", duration: "3:39", liked: false }
+  ]
+},
+{
+  title: "You've Come a Long Way, Baby",
+  color: "55322e",
+  artist: "Fatboy Slim",
+  year: 1998,
+  tracks: [
+    { title: "Right Here, Right Now", duration: "6:27", liked: false },
+    { title: "The Rockafeller Skank", duration: "6:53", liked: false },
+    { title: "Fucking In Heaven", duration: "3:54", liked: false }
+  ]
+}
+];
+
+</script>
+<title>Arnoutheek</title>
+<link rel="icon" type="image/x-icon" href="(favicon512x512.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, viewport-fit=cover">
+
+
+<!-- STYLE _________________________________________________________________-->
+<style>
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Google Sans', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: rgb(249, 249, 249);
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.topMenu {
+  display: flex;
+  height: 13vw;
+  align-items: baseline;
+  padding: 0 5vw 3vw 5vw;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  box-sizing: border-box;
+  background-color: rgb(249, 249, 249);
+  z-index: 10;
+  border-radius: 0 0 9.4vw 9.4vw;
+  /*border-bottom: 1.5px solid rgb(225, 225, 225);*/
+  border-bottom: 1.5px solid rgb(210, 210, 210);
+}
+
+#menuTitle {
+  color: rgb(50, 50, 50);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  width: 50%;
+}
+
+#menuRight {
+  display: flex;
+  justify-content: flex-end;
+  width: 50%;
+}
+
+#sortingButton {
+  display: flex;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgb(50, 50, 50);
+  cursor: pointer;
+  padding-right: 15%;
+}
+
+#sortingButton img {
+  height: 2.75vw;
+  align-self: center;
+  padding-right: 10%;
+}
+
+#fullScreenButton {
+  display: flex;
+}
+
+#fullScreenButton img {
+  height: 3.25vw;
+  align-self: center;
+}
+
+#masterContainer {
+  display: flex;
+  justify-content: space-evenly;
+  row-gap: 1vw;
+  flex-wrap: wrap;
+  background-color: rgb(249, 249, 249);
+  padding-top: 14vw;
+}
+
+.headerSquare {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32%;
+  aspect-ratio: 1 / 1;
+  border-radius: 6.4vw;
+  box-sizing: border-box;
+  /*border: 1.5px solid rgb(225, 225, 225);*/
+  border: 1.5px solid rgb(210, 210, 210)
+}
+
+.headerSquareText {
+  font-size: 2rem;
+  font-weight: 500;
+  color: rgb(50, 50, 50);
+  text-align: center;
+  word-break: break-word;
+  letter-spacing: -2px;
+  padding: 5%;
+}
+
+.thumbnailContainer{
+  width: 32%;
+  aspect-ratio: 1 / 1;
+}
+
+.thumbnailImage {
+  width: 100%;
+  display: block;
+  border-radius: 6.4vw;
+  cursor: pointer;
+}
+
+#sortingMenuFade {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  display: flex;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(249, 249, 249, 0.1);
+  align-items: flex-end;
+  backdrop-filter: blur(8px);
+}
+
+#sortingMenu {
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6.5vw 6.5vw 0 0;
+  background-color: rgb(245, 245, 245);
+  padding: 0 7.3vw 0 4.2vw;
+  width: 100%;
+  color: rgb(95, 95, 95);
+}
+
+#sortingMenuFade.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#sortingMenuFade.show #sortingMenu {
+  transform: translateY(0);
+}
+
+#handle {
+  width: 7.8vw;
+  height: 1vw;
+  background-color: rgb(95, 95, 95);
+  border-radius: 100vw;
+  align-self: center;
+  margin: 2.9vw 0 7vw 0;
+}
+
+#sortingMenuTitle {
+  display: flex;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 8vw;
+}
+
+.sortingMenuOption {
+  display: flex;
+  font-size: 1.2rem;
+  margin-bottom: 8vw;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+  justify-content: space-between;
+}
+
+.sortingMenuOptionText {
+  display: flex;
+  color: rgb(50, 50, 50);
+}
+
+.sortingMenuOptionCircle {
+  display: flex;
+}
+
+.sortingMenuOptionCircle img {
+  width: 5vw;
+  align-self: center;
+  padding-top: 0.75vw;
+}
+
+#backgroundFade {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  display: flex;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(249, 249, 249, 0.1);
+  justify-content: center; /*horizontally in the middle*/
+  align-items: center; /*vertically in the middle*/
+  backdrop-filter: blur(8px);
+}
+
+#backgroundFade.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#slider {
+  display: flex;
+  gap: 2vw;
+  align-items: center;
+  width: 100vw;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+#albumImageContainer {
+  border-radius: 8%;
+  width: 90vw;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  overflow: hidden;
+  margin-left: 2vw;
+  scroll-margin: 2vw;
+}
+
+#albumImage {
+  width: 100%;
+  height: 100%;
+}
+
+#albumInfoContainer {
+  color: rgba(50, 50, 50, 0.6);
+  border-radius: 8%;
+  width: 90vw;
+  aspect-ratio: 1 / 1;
+  cursor: pointer;
+  overflow-y: auto;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+  margin-right: 2vw;
+}
+
+#metaDataContainer {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  column-gap: 5%;
+  row-gap: 1vw;
+  margin: 6%;
+}
+
+#title {
+  color: rgb(50, 50, 50);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -1.5px;
+}
+
+#artistYear {
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+}
+
+#tracklist {
+  list-style-type: none;
+  padding: 0 3% 0 3%; 
+}
+
+.track-item-link {
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 3% 1% 3%;
+  margin-bottom: 1%;
+  text-decoration: none;
+  color: inherit; /*doesn't inherit by default because it's a link*/
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  letter-spacing: -0.5px;
+  background-color: rgba(0, 0, 0, 0.075);
+  border-radius: 3vw;
+}
+
+.track-number {
+  font-size: 1.1rem;
+  width: 7.5%;
+  letter-spacing: -2px;
+  margin-top: 0px;
+}
+
+.track-title {
+  width: 74.5%;
+  color: rgb(50, 50, 50)
+  font-size: 1.4rem;
+}
+
+.track-duration {
+  font-size: 1.1rem;
+  width: 18%;
+  text-align: right;
+}
+
+#albumInfoContainer .track-item-link:hover {
+  background-color: rgba(0, 0, 0, 0.15);
+}
+
+.track-item-link:active {
+  transform: scale(0.98);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* DARK MODE ________________________________________________________________*/
+
+#albumInfoContainer.dark-bg {
+  color: rgba(255, 255, 255, 0.65);
+}
+
+#albumInfoContainer.dark-bg #title {
+  color: rgb(249, 249, 249);
+}
+
+#albumInfoContainer.dark-bg .track-item-link {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+#albumInfoContainer.dark-bg .track-item-link:hover {
+  background-color: rgba(255, 255, 255, 0.45);
+}
+
+#albumInfoContainer.dark-bg .track-title {
+  color: rgb(249, 249, 249);
+}
+
+</style>
+</head>
+<body>
+
+<!-- HTML __________________________________________________________________-->
+
+<div class="topMenu">
+  <div id="menuTitle">Bibliotheek</div>
+  <div id="menuRight">
+    <div id="sortingButton">
+      <img src="sorteren.png">
+      <span id="sortingButtonText">JAAR</span>
+    </div>
+    <div id="fullScreenButton"><img src="fullScreen.png"></div>
+  </div>
+</div>
+
+<div id="masterContainer"></div>
+
+<div id="sortingMenuFade">
+  <div id="sortingMenu">
+    <div id="handle"></div>
+    <div id="sortingMenuTitle">Sorteren op</div>
+    <div id="alphabeticalSortingButton" class="sortingMenuOption">
+      <div class="sortingMenuOptionText">Artiest</div>
+      <div class="sortingMenuOptionCircle"><img src="circleEmpty.png"></div>
+    </div>
+    <div id="chronologicalSortingButton" class="sortingMenuOption">
+      <div class="sortingMenuOptionText">Jaar</div>
+      <div class="sortingMenuOptionCircle"><img src="circleFull.png"></div>
+    </div>
+  </div>
+</div>
+
+<div id="backgroundFade">
+  <div id="slider">
+    <div id="albumImageContainer">
+      <img id="albumImage" src="" alt="Album Cover">
+    </div>
+    <div id="albumInfoContainer">
+      <div id="metaDataContainer">
+        <div id="title"></div>
+        <div id="artistYear"></div>
+      </div>
+      <ol id="tracklist"></ol>
+    </div>
+  </div>
+</div>
+
+<script>
+
+
+// HTML GENERATOR _____________________________________________________________
+
+function renderAlbums(albumsToRender, sortMode) {
+  const masterContainer = document.getElementById('masterContainer');
+  masterContainer.innerHTML = "";
+  let lastGroup = "";
+
+  albumsToRender.forEach(album => {
+    let currentGroup = sortMode === 'alphabetical' ? album.artist : album.year; // Base header on sort mode
+
+    if (currentGroup !== lastGroup) { // Inject header when necessary
+      const headerDiv = document.createElement('div');
+      headerDiv.classList.add('thumbnailContainer', 'headerSquare');
+      headerDiv.innerHTML = `<div class="headerSquareText">${currentGroup}</div>`;
+      masterContainer.appendChild(headerDiv);
+      lastGroup = currentGroup;
+    }
+
+    const imageName = album.title // Determine image name based on album title
+      .replace(/ /g, '_')
+      .replace(/\?/g, '(question_mark)')
+      .replace(/:/g, '(colon)');
+
+    const thumbnailContainer = document.createElement('div'); // Set values for thumbnails
+    thumbnailContainer.classList.add('thumbnailContainer');
+    thumbnailContainer.innerHTML = `
+      <img class="thumbnailImage" src="${imageName}_thumb.jpg" alt="${album.title}">
+    `;
+
+    const thumbnailImage = thumbnailContainer.querySelector('.thumbnailImage'); // Make thumbnail clickable
+    thumbnailImage.onclick = function() {
+      if (album.color) {
+        albumInfoContainer.style.backgroundColor = `#${album.color}`;
+        const r = parseInt(album.color.substring(0, 2), 16);
+        const g = parseInt(album.color.substring(2, 4), 16);
+        const b = parseInt(album.color.substring(4, 6), 16);
+        const brightness = (r + g + b) / 3;
+        albumInfoContainer.classList.toggle('dark-bg', brightness < 200);
+      } else {
+        albumInfoContainer.style.backgroundColor = "white"; 
+        albumInfoContainer.classList.remove('dark-bg');
+      }
+      
+// 2. Wait a split millisecond for the layout to load, then instantly snap to the right
+setTimeout(function() {
+  slider.scrollTo({
+    left: 10000,       // A massive number guarantees it goes as far right as possible
+    behavior: 'auto'   // 'auto' overrides the smooth CSS so it snaps instantly on open
+  });
+}, 10); 
+      albumImage.src = `${imageName}.jpg`; 
+      albumImage.alt = album.title;          
+      title.textContent = album.title;       
+      artistYear.textContent = `${album.artist} • ${album.year}`; 
+      tracklist.innerHTML = "";              
+
+      album.tracks.forEach((track, index) => {
+        const li = document.createElement('li');                
+        const liked = track.liked ? "&#11044" : "";              
+        const linkUrl = track.link ? track.link : "";           
+        const targetAttr = track.link ? 'target="_blank"' : ''; 
+        const trackNum = index + 1;                             
+        li.innerHTML = `                                        
+          <a href="${linkUrl}" ${targetAttr} class="track-item-link">
+            <div class="track-number">${trackNum}</div>
+            <div class="track-title">${track.title}</div>
+            <div class="track-duration">${liked} &nbsp;${track.duration}</div>
+          </a>
+        `;
+        if (!track.link) {                                      
+          li.querySelector('.track-item-link').onclick = (e) => e.preventDefault();
+        }
+        tracklist.appendChild(li);                              
+      });
+
+      backgroundFade.classList.add('show');         
+    };
+
+    masterContainer.appendChild(thumbnailContainer); 
+  });
+}
+
+
+// INITIAL SORTING ____________________________________________________________
+
+let sortedAlbums = [...albumsarray];
+sortedAlbums.sort((a, b) => {
+  if (a.year !== b.year) {
+    return b.year - a.year;
+  }
+  return a.artist.toLowerCase().localeCompare(b.artist.toLowerCase());
+});
+renderAlbums(sortedAlbums, 'chronological');
+
+
+// HIDING MODALS ______________________________________________________________
+
+window.onclick = function(event) {
+  if (event.target === backgroundFade) {
+    backgroundFade.classList.remove('show');
+  }
+  else if (event.target === sortingMenuFade) {
+    sortingMenuFade.classList.remove('show');
+  }
+}
+
+
+// SORTING BUTTON _____________________________________________________________
+
+const sortingButton = document.getElementById('sortingButton');
+const sortingMenuFade = document.getElementById('sortingMenuFade');
+const sortingMenu = document.getElementById('sortingMenu');
+const alphabeticalSortingButton = document.getElementById('alphabeticalSortingButton');
+const chronologicalSortingButton = document.getElementById('chronologicalSortingButton');
+sortingButton.onclick = function() {
+  sortingMenuFade.classList.add('show'); 
+};
+
+alphabeticalSortingButton.onclick = function() {
+  sortedAlbums.sort((a, b) => {
+    const artistA = a.artist.toLowerCase();
+    const artistB = b.artist.toLowerCase();
+    if (artistA !== artistB) {
+      return artistA.localeCompare(artistB);
+    }
+    return a.year - b.year; 
+  });
+  document.getElementById('sortingButtonText').textContent = "AZ";
+  document.querySelector('#alphabeticalSortingButton img').src = "circleFull.png";
+  document.querySelector('#chronologicalSortingButton img').src = "circleEmpty.png";
+  renderAlbums(sortedAlbums, 'alphabetical');
+  sortingMenuFade.classList.remove('show');
+};
+
+chronologicalSortingButton.onclick = function() {
+  sortedAlbums.sort((a, b) => {
+    if (a.year !== b.year) {
+      return b.year - a.year;
+    }
+    return a.artist.toLowerCase().localeCompare(b.artist.toLowerCase());
+  });
+  document.getElementById('sortingButtonText').textContent = "JAAR";
+  document.querySelector('#alphabeticalSortingButton img').src = "circleEmpty.png";
+  document.querySelector('#chronologicalSortingButton img').src = "circleFull.png";
+  renderAlbums(sortedAlbums, 'chronological');
+  sortingMenuFade.classList.remove('show');
+};
+
+
+// FULL SCREEN BUTTON _________________________________________________________
+
+// 1. Grab your fullscreen button (Replace 'fullscreenButton' with your actual button's ID)
+const fullscreenButton = document.getElementById('fullScreenButton');
+
+fullscreenButton.onclick = function() {
+  // Check if the browser is currently in fullscreen mode
+  const isFullscreen = document.fullscreenElement || 
+                       document.webkitFullscreenElement || 
+                       document.mozFullScreenElement || 
+                       document.msFullscreenElement;
+
+  if (!isFullscreen) {
+    // If not in fullscreen, enter it (targeting the entire page)
+    const docElm = document.documentElement;
+    if (docElm.requestFullscreen) {
+      docElm.requestFullscreen();
+    } else if (docElm.webkitRequestFullscreen) { /* iOS / Safari */
+      docElm.webkitRequestFullscreen();
+    } else if (docElm.mozRequestFullScreen) { /* Firefox */
+      docElm.mozRequestFullScreen();
+    } else if (docElm.msRequestFullscreen) { /* IE/Edge */
+      docElm.msRequestFullscreen();
+    }
+  } else {
+    // If already in fullscreen, exit it
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) { /* iOS / Safari */
+      document.webkitExitFullscreen();
+    } else if (document.mozCancelFullScreen) { /* Firefox */
+      document.mozCancelFullScreen();
+    } else if (document.msExitFullscreen) { /* IE/Edge */
+      document.msExitFullscreen();
+    }
+  }
+};
+
+
+// HEADER _____________________________________________________________________
+
+const topMenu = document.querySelector('.topMenu');
+let lastScrollY = window.scrollY;
+let headerY = 0; // 0 means fully visible, negative means pushed up
+
+window.addEventListener('scroll', () => {
+  const currentScrollY = window.scrollY;
+  const headerHeight = topMenu.offsetHeight;
+  
+  // Calculate exactly how many pixels the user just scrolled
+  const deltaY = currentScrollY - lastScrollY;
+
+  // Ignore iOS elastic "bounce" scrolling at the very top
+  if (currentScrollY < 0) return;
+
+  // Move the header by the exact same amount the user scrolled
+  headerY -= deltaY;
+
+  // Clamp the math so it doesn't push too far up or pull too far down
+  if (headerY < -headerHeight) {
+    headerY = -headerHeight; // Cap it exactly at its own height (fully hidden)
+  } else if (headerY > 0) {
+    headerY = 0; // Cap it at 0 (fully visible)
+  }
+
+  // Instantly apply the movement
+  topMenu.style.transform = `translateY(${headerY}px)`;
+
+  // Save the current scroll position for the next frame
+  lastScrollY = currentScrollY;
+}, { passive: true }); // passive: true ensures the scrolling stays buttery smooth
+
+</script>
+</body>
+</html>
